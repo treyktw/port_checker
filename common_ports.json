@@ -1,0 +1,249 @@
+{
+  "common_ports": [
+    {
+      "name": "HTTP",
+      "port": 80,
+      "protocol": "TCP"
+    },
+    {
+      "name": "HTTPS",
+      "port": 443,
+      "protocol": "TCP"
+    },
+    {
+      "name": "FTP",
+      "port": 21,
+      "protocol": "TCP"
+    },
+    {
+      "name": "SSH",
+      "port": 22,
+      "protocol": "TCP"
+    },
+    {
+      "name": "Telnet",
+      "port": 23,
+      "protocol": "TCP"
+    },
+    {
+      "name": "SMTP",
+      "port": 25,
+      "protocol": "TCP"
+    },
+    {
+      "name": "DNS",
+      "port": 53,
+      "protocol": "TCP/UDP"
+    },
+    {
+      "name": "POP3",
+      "port": 110,
+      "protocol": "TCP"
+    },
+    {
+      "name": "IMAP",
+      "port": 143,
+      "protocol": "TCP"
+    },
+    {
+      "name": "MySQL",
+      "port": 3306,
+      "protocol": "TCP"
+    },
+    {
+      "name": "PostgreSQL",
+      "port": 5432,
+      "protocol": "TCP"
+    },
+    {
+      "name": "MSSQL",
+      "port": 1433,
+      "protocol": "TCP"
+    },
+    {
+      "name": "RDP",
+      "port": 3389,
+      "protocol": "TCP"
+    },
+    {
+      "name": "Minecraft",
+      "port": 25565,
+      "protocol": "TCP"
+    },
+    {
+      "name": "TeamSpeak 3",
+      "port": 9987,
+      "protocol": "UDP"
+    },
+    {
+      "name": "CS:GO",
+      "port": 27015,
+      "protocol": "TCP/UDP"
+    },
+    {
+      "name": "World of Warcraft",
+      "port": 3724,
+      "protocol": "TCP"
+    },
+    {
+      "name": "League of Legends",
+      "port": 5000,
+      "protocol": "UDP"
+    },
+    {
+      "name": "Steam",
+      "port": 27000,
+      "protocol": "UDP"
+    },
+    {
+      "name": "VNC",
+      "port": 5900,
+      "protocol": "TCP"
+    },
+    {
+      "name": "SNMP",
+      "port": 161,
+      "protocol": "UDP"
+    },
+    {
+      "name": "TFTP",
+      "port": 69,
+      "protocol": "UDP"
+    },
+    {
+      "name": "NTP",
+      "port": 123,
+      "protocol": "UDP"
+    },
+    {
+      "name": "Kerberos",
+      "port": 88,
+      "protocol": "TCP/UDP"
+    },
+    {
+      "name": "LDAP",
+      "port": 389,
+      "protocol": "TCP/UDP"
+    },
+    {
+      "name": "LDAPS",
+      "port": 636,
+      "protocol": "TCP"
+    },
+    {
+      "name": "SMB",
+      "port": 445,
+      "protocol": "TCP"
+    },
+    {
+      "name": "Syslog",
+      "port": 514,
+      "protocol": "UDP"
+    },
+    {
+      "name": "SIP",
+      "port": 5060,
+      "protocol": "TCP/UDP"
+    },
+    {
+      "name": "Oracle DB",
+      "port": 1521,
+      "protocol": "TCP"
+    },
+    {
+      "name": "Cassandra",
+      "port": 9042,
+      "protocol": "TCP"
+    },
+    {
+      "name": "Memcached",
+      "port": 11211,
+      "protocol": "TCP/UDP"
+    },
+    {
+      "name": "ElasticSearch",
+      "port": 9200,
+      "protocol": "TCP"
+    },
+    {
+      "name": "Redis",
+      "port": 6379,
+      "protocol": "TCP"
+    },
+    {
+      "name": "MongoDB",
+      "port": 27017,
+      "protocol": "TCP"
+    },
+    {
+      "name": "Docker",
+      "port": 2375,
+      "protocol": "TCP"
+    },
+    {
+      "name": "Kubernetes API",
+      "port": 6443,
+      "protocol": "TCP"
+    },
+    {
+      "name": "Kafka",
+      "port": 9092,
+      "protocol": "TCP"
+    },
+    {
+      "name": "RabbitMQ",
+      "port": 5672,
+      "protocol": "TCP"
+    },
+    {
+      "name": "Zookeeper",
+      "port": 2181,
+      "protocol": "TCP"
+    },
+    {
+      "name": "RADIUS",
+      "port": 1812,
+      "protocol": "UDP"
+    },
+    {
+      "name": "OpenVPN",
+      "port": 1194,
+      "protocol": "UDP"
+    },
+    {
+      "name": "BGP",
+      "port": 179,
+      "protocol": "TCP"
+    },
+    {
+      "name": "SMTP (SSL)",
+      "port": 465,
+      "protocol": "TCP"
+    },
+    {
+      "name": "POP3 (SSL)",
+      "port": 995,
+      "protocol": "TCP"
+    },
+    {
+      "name": "IMAP (SSL)",
+      "port": 993,
+      "protocol": "TCP"
+    },
+    {
+      "name": "WebSocket",
+      "port": 80,
+      "protocol": "TCP"
+    },
+    {
+      "name": "WebSocket Secure",
+      "port": 443,
+      "protocol": "TCP"
+    },
+    {
+      "name": "localhost standard",
+      "port": 3000,
+      "protocol": "TCP/UDP"
+    }
+  ]
+}

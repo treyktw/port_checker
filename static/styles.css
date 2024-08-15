@@ -1,0 +1,75 @@
+/* static/styles.css */
+/* static/styles.css */
+body {
+  font-family: 'Courier New', monospace;
+  background-color: #1e1e1e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.terminal {
+  width: 80%;
+  max-width: 800px;
+  background-color: #000;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.terminal-header {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.terminal-body {
+  color: #00ff00;
+  padding: 20px;
+  min-height: 300px;
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.terminal-footer {
+  padding: 10px;
+  text-align: center;
+}
+
+button, input {
+  background-color: #333;
+  color: #00ff00;
+  border: 1px solid #00ff00;
+  padding: 10px;
+  margin: 5px;
+  border-radius: 5px;
+  font-family: 'Courier New', monospace;
+}
+
+button:hover {
+  background-color: #00ff00;
+  color: #000;
+}
+
+button:disabled {
+  background-color: #666;
+  border-color: #666;
+  color: #ccc;
+  cursor: not-allowed;
+}
+
+input {
+  width: 60%;
+}
+
+.open {
+  color: #00ff00;
+}
+
+.closed {
+  color: #ff0000;
+}

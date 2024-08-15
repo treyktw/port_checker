@@ -1,0 +1,91 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Network Port Scanner</title>
+    <script src="https://unpkg.com/htmx.org@1.9.5"></script>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="terminal">
+        <div class="terminal-header">
+            Network Port Scanner
+        </div>
+        <div class="terminal-body" id="output">
+            Welcome to the Network Port Scanner.
+            Enter custom IPs (comma-separated) below and click "Start Scan" to begin.
+        </div>
+        <div class="terminal-footer">
+            <input type="text" id="customIPs" placeholder="Custom IPs (optional, comma-separated)">
+            <button id="scanButton">Start Scan</button>
+        </div>
+    </div>
+
+    <script>
+        const scanButton = document.getElementById('scanButton');
+        const output = document.getElementById('output');
+        const customIPsInput = document.getElementById('customIPs');
+        let eventSource;
+
+        scanButton.addEventListener('click', function() {
+            if (eventSource) {
+                eventSource.close();
+            }
+            startScan();
+        });
+
+        function startScan() {
+            output.innerHTML = 'Scanning... <br>';
+            scanButton.disabled = true;
+            scanButton.textContent = 'Scanning...';
+            
+            const customIPs = customIPsInput.value;
+            
+            fetch('/scan', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: `customIPs=${encodeURIComponent(customIPs)}`
+            }).then(response => response.json())
+              .then(data => {
+                  console.log(data.message);
+                  listenForEvents();
+              });
+        }
+
+        function listenForEvents() {
+            eventSource = new EventSource('/events');
+            
+            eventSource.onmessage = function(event) {
+                const result = JSON.parse(event.data);
+                const resultElement = document.createElement('div');
+                resultElement.className = result.status;
+                resultElement.textContent = `IP: ${result.ip}, Port: ${result.port.port} (${result.port.name}) - ${result.status.toUpperCase()}`;
+                output.appendChild(resultElement);
+                output.scrollTop = output.scrollHeight;
+            };
+            
+            eventSource.addEventListener('complete', function(event) {
+                console.log('Scan complete');
+                eventSource.close();
+                scanComplete();
+            });
+            
+            eventSource.onerror = function(error) {
+                console.error('EventSource failed:', error);
+                eventSource.close();
+                scanComplete();
+            };
+        }
+
+        function scanComplete() {
+            output.innerHTML += '<br>Scan complete!';
+            scanButton.disabled = false;
+            scanButton.textContent = 'Start Scan';
+        }
+    </script>
+</body>
+</html>
